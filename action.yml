@@ -1,0 +1,16 @@
+name: "Check dotnet-install scripts staleness"
+description: "A Github Actions script that checks if a local copy of the dotnet-install scripts is up to date or not"
+inputs:
+  script-file:
+    description: "The name of the script file to check. Should be either 'dotnet-install.sh' or 'dotnet-install.ps1'. Defaults to 'dotnet-install.sh'"
+    required: true
+    default: "dotnet-install.sh"
+  etag:
+    description: "The ETag of the local dotnet-install scripts file to check against"
+    required: true
+outputs:
+  current-etag: # id of output
+    description: "The ETag of the latest version of the scripts available on the CDN"
+runs:
+  using: "node20"
+  main: "index.js"

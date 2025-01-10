@@ -1,0 +1,15 @@
+{
+  "name": "check-dotnet-install-scripts-action",
+  "version": "1.0.0",
+  "description": "A Github Actions script that checks if a local copy of the dotnet-install scripts is up to date or not",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@actions/core": "^1.11.1"
+  }
+}
