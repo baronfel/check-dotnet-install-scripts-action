@@ -32,7 +32,7 @@ The current ETag of the script that was requested. This is the value that you ca
 ## Example usage
 
 ```yaml
-uses: actions/hello-world-javascript-action@e76147da8e5c81eaf017dede5645551d4b94427b
+uses: baronfel/check-dotnet-install-scripts-action@e76147da8e5c81eaf017dede5645551d4b94427b
 with:
     script-file: dotnet-install.sh
     etag: 0x8DD2F3D8D65F264
