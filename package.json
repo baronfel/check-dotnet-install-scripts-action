@@ -4,12 +4,13 @@
   "description": "A Github Actions script that checks if a local copy of the dotnet-install scripts is up to date or not",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "act --use-gitignore=false --input script-file=dotnet-install.sh --input etag=0x8DD2F3D8D65F264 --env RUNNER_DEBUG=true"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@actions/core": "^1.11.1"
+    "@actions/core": "^1.11.1",
+    "@actions/http-client": "^2.2.3"
   }
 }

@@ -1,0 +1,25 @@
+name: Test Action
+
+on:
+    workflow_dispatch:
+        inputs:
+            script-file:
+                description: "The name of the script file to check. Should be either 'dotnet-install.sh' or 'dotnet-install.ps1'. Defaults to 'dotnet-install.sh'"
+                required: true
+                default: "dotnet-install.sh"
+            etag:
+                description: "The ETag of the local dotnet-install scripts file to check against"
+                required: true
+jobs:
+    test:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout
+              uses: actions/checkout@v3
+
+            - name: Run Action
+              id: check
+              uses: ./
+              with:
+                  script-file: ${{ github.event.inputs.script-file }}
+                  etag: ${{ github.event.inputs.etag }}
